@@ -9,6 +9,8 @@ var connection = mysql.createConnection({
   database: "burgers_db"
 });
 
+//const connection = mysql.createConnection(process.env.JAWSDB_URL);
+
 // Make connection.
 connection.connect(function(err) {
   if (err) {

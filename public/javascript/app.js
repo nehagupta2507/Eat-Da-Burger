@@ -26,7 +26,12 @@ $(function() {
         let idInput = $(this).data("id");
         console.log(idInput);
 
-        $.ajax(`/api/burgers/${idInput}`, {type: "PUT"}).then(
+        $.ajax(`/api/burgers/${idInput}`, {
+            type: "PUT",
+            data: {
+                devoured: true
+            }
+        }).then(
             function() {
                 location.reload();
             }
@@ -38,8 +43,9 @@ $(function() {
         console.log("delete is working");
         let id = $(this).data("id");
         console.log(id);
-
-        $.ajax(`/api/burgers/${id}`, {type: "PUT"}).then(
+        $.ajax(`/api/burgers/${id}`, {
+            type: "DELETE"
+            }).then(
             function() {
                 location.reload();
             }
