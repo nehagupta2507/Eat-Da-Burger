@@ -22,15 +22,16 @@ $(function() {
 
     });
 
-    // $(".devoured").on("click", function(event) {
-    //     let idInput = $(this).data("id");
+    $(".devoured").on("click", function(event) {
+        let idInput = $(this).data("id");
+        console.log(idInput);
 
-    //     $.ajax("/api/burgers/${idInput}", {type: "PUT"}).then(
-    //         function() {
-    //             location.reload();
-    //         }
-    //     );
+        $.ajax(`/api/burgers/${idInput}`, {type: "PUT"}).then(
+            function() {
+                location.reload();
+            }
+        );
 
-    // });
+    });
 
 });

@@ -18,10 +18,12 @@ router.post("/api/burgers", function(req, res){
 });
 
 router.put('/api/burgers/:id', function(req, res){
-	var condition = "id = " + req.params.id;
-	console.log("condition ", condition);
-	burgers.update({"devoured": req.body.devoured}, condition, function(data){
-		res.redirect("/");
-	});
+	let condition = "id = " + req.params.id;
+	burgers.update({"devoured": true}, condition, function(data){
+		if (data.changedRows === 0) {
+			return res.status(404).end();
+		}
+		res.status(202).end();
+	  });
 });
 module.exports = router;

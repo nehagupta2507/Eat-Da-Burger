@@ -13,8 +13,8 @@ const orm = {
     });
   },
   create: function(table, cols, vals, cb) {
-    var queryString = `INSERT INTO ${table} (${cols}) VALUES ("${vals}")`;
-    console.log(queryString);
+    let queryString = `INSERT INTO ${table} (${cols}) VALUES ("${vals}")`;
+    //console.log(queryString);
     connection.query(queryString, function(err, result) {
       if (err) {
         throw err;
@@ -23,9 +23,9 @@ const orm = {
     });
   },
   update: function(table, cols, boolean, condition, cb) {
-    const querySting = `UPDATE ${table} SET ${cols} = ${boolean} WHERE ${condition}`;
-    console.log(queryString);
-    connection.query(querySting, function (err, result) {
+    let queryString = `UPDATE ${table} SET ${cols} = ${boolean.devoured} WHERE ${condition}`;
+    //console.log(queryString);
+    connection.query(queryString, function (err, result) {
       if (err) {
         throw err
       };
@@ -33,7 +33,7 @@ const orm = {
     });
   },
   delete: function (table, condition, cb) {
-    const queryString = `DELETE FROM ${table} WHERE ${condition}`;
+    let queryString = `DELETE FROM ${table} WHERE ${condition}`;
     console.log(queryString);
     connection.query(queryString, function (err, result) {
       if (err) {
