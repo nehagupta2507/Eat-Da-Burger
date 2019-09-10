@@ -25,11 +25,11 @@
             <div class="card col-md-6">
             <h4 class="card-header">Burger List &#127828</h4>
             <div class="card-body">
-                {{#each burgers}}
-                    {{#unless devoured}}
+                {{#each burger_data}}
+                    {{#unless this.devoured}}
                     <div>
-                        {{id}}. {{burger_name}}
-                        <button class="devoured btn btn-info" data-id="{{id}}">DEVOUR IT!</button>
+                        <p>#{{this.id}}: {{this.burger_name}}</p>
+                        <button class="devoured btn btn-info" data-id="{{this.id}}">DEVOUR IT!</button>
                     </div>
                     <br>
                     {{/unless}}
@@ -39,10 +39,10 @@
             <div class="card col-md-6">
             <h4 class="card-header">Devoured List &#127828</h4>
             <div class="card-body">            
-                {{#each burgers}}
-                    {{#if devoured}}
+                {{#each burger_data}}
+                    {{#if this.devoured}}
                         <div>
-                            {{id}}. {{burger_name}}
+                            #{{this.id}}: {{this.burger_name}}
                         </div>
                         <br>
                     {{/if}}
