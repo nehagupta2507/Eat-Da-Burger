@@ -24,7 +24,7 @@ const orm = {
   },
   update: function(table, cols, boolean, condition, cb) {
     let queryString = `UPDATE ${table} SET ${cols} = ${boolean.devoured} WHERE ${condition}`;
-    //console.log(queryString);
+    console.log(queryString);
     connection.query(queryString, function (err, result) {
       if (err) {
         throw err

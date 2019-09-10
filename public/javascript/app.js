@@ -34,4 +34,18 @@ $(function() {
 
     });
 
+    $(".delBur").on("click", function(event) {
+        console.log("delete is working");
+        let id = $(this).data("id");
+        console.log(id);
+
+        $.ajax(`/api/burgers/${id}`, {type: "PUT"}).then(
+            function() {
+                location.reload();
+            }
+        );
+
+    });
+
+
 });
